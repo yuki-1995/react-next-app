@@ -5,7 +5,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import { styled } from '@mui/system';
+import { collection, addDoc } from 'firebase/firestore';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { db } from '../../../firebase';
 import { Employee } from '../types';
 
 const StyledFormItem = styled('div')({
@@ -27,8 +29,18 @@ const RegisterEmployee: React.FC = () => {
     formState: { errors },
   } = useForm<Employee>();
 
-  const onsubmit = (data: Employee) => {
-    console.log(data);
+  const onsubmit = async (data: Employee) => {
+    try {
+      // TODO 現在時刻を追加する
+      // const currentAt = new Date();
+      // data['createAt'] = currentAt.getDate().toString();
+      // data['updateAt'] = currentAt.getDate().toString();
+      console.log(data);
+      const userRef = await addDoc(collection(db, 'employees'), data);
+      return userRef.id;
+    } catch (e) {
+      console.log('error :', e);
+    }
     reset();
   };
 

@@ -11,7 +11,7 @@ const Employee: React.FC = () => {
       }}
     >
       <div>
-        <h2>従業員情報入力画面</h2>
+        <h2>従業員追加画面</h2>
         <RegisterEmployee />
       </div>
     </div>

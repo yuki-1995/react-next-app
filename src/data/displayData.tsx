@@ -10,7 +10,7 @@ export const SideBarData = [
     link: '/',
   },
   {
-    title: '従業員新規追加',
+    title: '従業員追加',
     icon: <PersonAddIcon />,
     link: '/Employee',
   },

@@ -6,4 +6,6 @@ export type Employee = {
   gender: string;
   email: string;
   role: string;
+  createAt: string;
+  updateAt: string;
 };
