@@ -8,7 +8,6 @@ const Employee: React.FC = () => {
         width: 'calc(100vw - 200px)',
         display: 'flex',
         justifyContent: 'center',
-        // alignItems: 'center',
       }}
     >
       <div>

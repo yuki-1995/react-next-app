@@ -5,5 +5,5 @@ export type Employee = {
   birthDate: string;
   gender: string;
   email: string;
-  role: 'ADMIN' | 'USER';
+  role: string;
 };
