@@ -37,7 +37,7 @@ const RegisterEmployee: React.FC = () => {
       // data['updateAt'] = currentAt.getDate().toString();
       console.log(data);
       const userRef = await addDoc(collection(db, 'employees'), data);
-      return userRef.id;
+      console.log('onsubmit userRef.id: ', userRef.id);
     } catch (e) {
       console.log('error :', e);
     }
